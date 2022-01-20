@@ -30,7 +30,7 @@ public class LoginServiceImpl implements LoginService {
         String token = null;
         try {
             UserDetails userDetails = loadUserByUsername(username);
-//            这里的密码校验逻辑简化了，如果是正常开发需要进行加密
+//            这里的密码校验逻辑简化了，如果是正常开发需要进行加密校验
             if (!password.equals(userDetails.getPassword())) {
                 CommonResult.failed(ResultCode.FAILED, "密码错误，请重新确认");
             }
@@ -45,7 +45,7 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public User getUserByUsername(String username) {
-        System.out.println("取出");
+//        System.out.println("取出");
         return userMapper.getUserByUsername(username);
     }
 

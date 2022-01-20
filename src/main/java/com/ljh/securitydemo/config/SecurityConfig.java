@@ -45,8 +45,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/v2/api-docs/**"
                 )
                 .permitAll()
-                .antMatchers("/security/login", "/security/register")// 对登录注册要允许匿名访问
-                .permitAll()
+//                .antMatchers("/security/login", "/security/register")// 对登录注册允许匿名访问
+//                .permitAll()
+                .antMatchers("/**")
+                .permitAll()  // 全部地址允许匿名访问
                 .anyRequest()// 除上面外的所有请求全部需要鉴权认证
                 .authenticated();
         http.headers().cacheControl();

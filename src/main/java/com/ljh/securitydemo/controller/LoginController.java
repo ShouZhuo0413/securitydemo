@@ -16,8 +16,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@Api(tags = "UmsAdminController", description = "后台用户管理")
-@RequestMapping("/admin")
+@Api(tags = "securityController", description = "登录管理")
+@RequestMapping("/security")
 public class LoginController {
 
     @Value("${jwt.tokenHeader}")
